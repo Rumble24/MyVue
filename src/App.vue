@@ -28,9 +28,10 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-    
+
   </div>
 </template>
+
 
 <script>
 export default {
@@ -38,13 +39,62 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+<style lang="scss" scoped>
+.mint-header {
+  z-index: 99;
+}
+.app-container {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
+}
+
+// 该类名，解决 tabbar 点击无法切换的问题
+.mui-bar-tab .mui-tab-item-llb.mui-active {
+  color: #007aff;
+}
+
+.mui-bar-tab .mui-tab-item-llb {
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #929292;
+}
+
+.mui-bar-tab .mui-tab-item-llb .mui-icon {
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mui-bar-tab .mui-tab-item-llb .mui-icon ~ .mui-tab-label {
+  font-size: 11px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
